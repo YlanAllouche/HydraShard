@@ -1,8 +1,5 @@
-// Scripts/createKeyPressMenu.js
-
 function createKeyPressMenu(menuItems) {
   return new Promise((resolve) => {
-    // Create and append menu elements
     const menuDiv = document.createElement("div");
     menuDiv.id = "which-key-menu";
 
@@ -67,7 +64,6 @@ function createKeyPressMenu(menuItems) {
     `;
     document.head.appendChild(style);
 
-    // Add event listener
     const handleKeydown = async (event) => {
       event.preventDefault(); // Prevent the key from being written
       const key = event.key.toLowerCase();
@@ -95,7 +91,6 @@ function createKeyPressMenu(menuItems) {
 
     document.addEventListener("keydown", handleKeydown, { once: true });
 
-    // Cleanup function
     const cleanup = () => {
       document.body.removeChild(menuDiv);
       document.head.removeChild(style);
